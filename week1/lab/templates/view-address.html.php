@@ -10,36 +10,39 @@
     </head>
     <body>
 
+        <a href="add.php">Add Address</a>
 
-<?php if ( is_array($address) && count($address) > 0 ) : ?>
+        <?php if (is_array($address) && count($address) > 0) : ?>
+            <div class="container">
+                <h1>All Addresses</h1>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Address Line 1</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Zip</th>
+                            <th>Birthday</th>
+                        </tr>
+                    </thead>
 
-<h1>Address</h1>
-        <table>
-            <tr>
-                <th>Full Name</th>
-                <th>Email</th>
-                <th>Address Line 1</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Zip</th>
-                <th>Birthday</th>
-            </tr>
-        
-
-<?php foreach( $address as $row ) : ?>
-            <tr>
-    <td><?php echo $row['fullname']; ?> </td>
-    <td><?php echo $row['email']; ?> </td>
-    <td><?php echo $row['addressline1']; ?> </td>
-    <td><?php echo $row['city']; ?> </td>
-    <td><?php echo $row['state']; ?> </td>
-    <td><?php echo $row['zip']; ?> </td>
-    <td><?php echo date("F j, Y",strtotime($row['birthday'])); ?> </td>
-    </tr>
-    
-<?php endforeach; ?>
-</table>
-<?php endif; ?>
-
+                    <?php foreach ($address as $row) : ?>
+                        <tbody>           
+                            <tr>
+                                <td><?php echo $row['fullname']; ?> </td>
+                                <td><?php echo $row['email']; ?> </td>
+                                <td><?php echo $row['addressline1']; ?> </td>
+                                <td><?php echo $row['city']; ?> </td>
+                                <td><?php echo $row['state']; ?> </td>
+                                <td><?php echo $row['zip']; ?> </td>
+                                <td><?php echo date("F j, Y", strtotime($row['birthday'])); ?> </td>
+                            </tr>
+                        </tbody>
+                    <?php endforeach; ?>
+                </table>
+            </div>
+        <?php endif; ?>
     </body>
 </html>

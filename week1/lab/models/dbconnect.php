@@ -1,9 +1,10 @@
 <?php
+
 /**
  * Function to establish a database connection
  * 
  * @return PDO Object
- */  
+ */
 function dbconnect() {
     $config = array(
         'DB_DNS' => 'mysql:host=localhost;port=3306;dbname=PHPAdvClassSpring2017',
@@ -24,11 +25,7 @@ function dbconnect() {
         var_dump($message);
         exit();
     }
-
     return $db;
 }
 
-
-
-    
-
+?>
