@@ -54,7 +54,7 @@ if ($util->isPostRequest()) {
             $zip = '';
             $birthday = '';
         } else {
-            $message->addMessage('Error','Error, Address was not added.');
+            $message->addMessage('Error', 'Error, Address was not added.');
         }
     }
 }

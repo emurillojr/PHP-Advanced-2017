@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of Message
  *
@@ -13,9 +7,8 @@
  */
 class Message implements IMessage {
 
-    protected $messages =[];
-    
-    
+    protected $messages = [];
+
     public function addMessage($key, $msg) {
         $this->messages[$key] = $msg;
     }
@@ -25,12 +18,10 @@ class Message implements IMessage {
     }
 
     public function removeMessage($key) {
-        if(array_key_exists($key, $this->messages)){
-          unset($this->messages[$key]);  
-        }
-      
-        else{
-            throw new Exception('The key doesnt exist' .$key);
+        if (array_key_exists($key, $this->messages)) {
+            unset($this->messages[$key]);
+        } else {
+            throw new Exception('The key doesnt exist' . $key);
         }
     }
 

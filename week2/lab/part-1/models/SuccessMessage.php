@@ -5,9 +5,6 @@
  *
  * @author Ernesto Murillo
  */
-class SuccessMessage extends Message{
-
-
+class SuccessMessage extends Message {
     
-   
 }
