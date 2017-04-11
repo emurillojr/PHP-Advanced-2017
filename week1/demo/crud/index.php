@@ -28,7 +28,6 @@
 
         if (isPostRequest()) {
             
-            
             if (!phoneIsValid($phone) ) {
                 $errors[] = 'Sorry Phone is not valid';
             }
