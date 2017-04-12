@@ -29,16 +29,19 @@ if ($util->isPostRequest()) {
 
     if (!count($errors)) {
 
-
+       
+        if ($reg->userExists($email)) {
+            $message = 'You have already registered with this email';
+        }
+        
+        
         if ($reg->insertUser($email, $password)) {
             $message = 'You have successfully registered';
             $email = '';
             $password = '';
             $confirmPassword = '';
         }
-        if ($reg->userExists($email)) {
-            $message = 'You have already registered with this email';
-        } else {
+         else {
             $message = 'Error, Registration failed.';
         }
     }

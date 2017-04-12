@@ -1,5 +1,6 @@
 
+<?php if (isset($message) && strlen($message)): ?>
 
-<?php foreach ($message->getAllMessages() as $key => $message): ?>
-    <li class="bg-danger"><?php echo $error; ?></li>
-<?php endforeach; ?>
+    <li class="bg-danger"><?php echo $message; ?></li>
+
+<?php endif; ?>
