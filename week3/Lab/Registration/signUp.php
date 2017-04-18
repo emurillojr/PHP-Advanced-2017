@@ -26,7 +26,7 @@ if ($util->isPostRequest()) {
     if ($password != $confirmPassword) {
         $errors[] = 'Sorry, Passwords do not match.';
     }
-
+ 
     if (!count($errors)) {
 
        

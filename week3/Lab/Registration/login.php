@@ -3,7 +3,7 @@
 
 include './autoload.php';
 
-$reg = new Registration(); //extends DB so no need to call DB
+//$reg = new Registration(); //extends DB so no need to call DB
 $util = new Util();
 $validate = new Validation();
 $errors = [];

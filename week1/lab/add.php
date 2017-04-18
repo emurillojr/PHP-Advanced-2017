@@ -36,9 +36,14 @@ if (isPostRequest()) {
     if (!isValidZip($zip) || empty($zip)) {
         $errors[] = 'Sorry, Zip Code is not valid.';
     }
-    if (!isValidDate($birthday) || ($birthday > $todaysdate)) {
-        $errors[] = 'Sorry, Birthday is not valid';
+    if (strToTime($birthday) > time()) {
+        $errors[] = 'Sorry, Birthday can not be greather than today.';
     }
+
+    if (!isValidDate($birthday)) {
+        $errors[] = 'Sorry,Birthday is not valid.';
+    }
+
     if (!count($errors)) {
         if (addAddress($fullName, $email, $address, $city, $state, $zip, $birthday)) {
             $message = 'Address Added';
