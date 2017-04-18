@@ -14,7 +14,6 @@ $zip = filter_input(INPUT_POST, 'zip');
 $birthday = filter_input(INPUT_POST, 'birthday');
 
 $states = returnStates();
-$todaysdate = date("m/d/Y");
 
 $errors = [];
 $message = '';
