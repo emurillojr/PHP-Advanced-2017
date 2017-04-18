@@ -5,7 +5,6 @@ include './autoload.php';
 $dbconnect = new AddressDB();
 $util = new Util();
 $validate = new Validation();
-$errors = [];
 
 $fullName = filter_input(INPUT_POST, 'fullname');
 $email = filter_input(INPUT_POST, 'email');
@@ -17,9 +16,8 @@ $birthday = filter_input(INPUT_POST, 'birthday');
 
 $states = $util->returnStates();
 
-
-$todaysdate = date("m/d/Y");
-
+$errors = [];
+$message = '';
 
 
 if ($util->isPostRequest()) {
@@ -39,8 +37,12 @@ if ($util->isPostRequest()) {
     if (!$validate->isValidZip($zip) || empty($zip)) {
         $errors[] = 'Sorry, Zip Code is not valid.';
     }
-    if (!$validate->isValidDate($birthday) || ($validate->isValidDate($birthday) > $todaysdate)) {
+
+    if (!$validate->isValidDate($birthday)) {
         $errors[] = 'Sorry, Birthday is not valid';
+    }
+    if (strToTime($birthday) > time()) {
+        $errors[] = 'Sorry, Birthday can not be greather than today.';
     }
     if (!count($errors)) {
         if ($dbconnect->addAddress($fullName, $email, $address, $city, $state, $zip, $birthday)) {

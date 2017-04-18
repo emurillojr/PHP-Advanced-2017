@@ -2,7 +2,7 @@
 
 /**
  *
- * @author EMURILLOJR
+ * @author Ernesto Murillo
 
  */
 interface IMessage {
