@@ -9,69 +9,64 @@ include_once './autoload.php';
 $restServer = new RestServer();
 
 try {
-    
+
     $restServer->setStatus(200);
-    
+
     $resource = $restServer->getResource();
     $verb = $restServer->getVerb();
     $id = $restServer->getId();
     $serverData = $restServer->getServerData();
-    
+
     $resourceUCName = ucwords($resource);
-    $resourceClassName = $resourceUCName . 'Resoruce'; 
-    try{
+    $resourceClassName = $resourceUCName . 'Resoruce';
+    try {
         $resourceData = new $resourceClassName();
     } catch (InvalidArgumentException $ex) {
-    throw new InvalidArgumentException($resourceUCName . ' Resource Not Found....');
+        throw new InvalidArgumentException($resourceUCName . ' Resource Not Found....');
     }
-        
-        
-        if ( 'GET' === $verb ) {
-            
-            if ( NULL === $id ) {
-                
-                $restServer->setData($resourceData->getAll());                           
-                
-            } else {
-                
-                $restServer->setData($resourceData->get($id));
-                
-            }            
-            
-        }
-                
-        if ( 'POST' === $verb ) {
-            
 
-            if ($resourceData->post($serverData)) {
-                $restServer->setMessage('Address Added');
-                $restServer->setStatus(201);
-            } else {
-                throw new Exception('Address could not be added');
-            }
-        
-        }
-        
-        
-        if ( 'PUT' === $verb ) {
-            
-            if ( NULL === $id ) {
-                throw new InvalidArgumentException('Address ID ' . $id . ' was not found');
-            }
-            
-        }
-        
 
-   
-    
+    if ('GET' === $verb) {
+
+        if (NULL === $id) {
+
+            $restServer->setData($resourceData->getAll());
+        } else {
+
+            $restServer->setData($resourceData->get($id));
+        }
+    }
+
+    if ('POST' === $verb) {
+
+
+        if ($resourceData->post($serverData)) {
+            $restServer->setMessage('Address Added');
+            $restServer->setStatus(201);
+        } else {
+            throw new Exception('Address could not be added');
+        }
+    }
+
+
+    if ('PUT' === $verb) {
+
+        if (NULL === $id) {
+            throw new InvalidArgumentException('Address ID ' . $id . ' was not found');
+        }
+    }
+
+
+
+
     /* 400 exeception means user sent something wrong */
 } catch (InvalidArgumentException $e) {
     $restServer->setStatus(400);
     $restServer->setErrors($e->getMessage());
     /* 500 exeception means something is wrong in the program */
-} catch (Exception $ex) {    
+} catch (Exception $ex) {
     $restServer->setStatus(500);
-    $restServer->setErrors($ex->getMessage());   
+    $restServer->setErrors($ex->getMessage());
 }
 
 

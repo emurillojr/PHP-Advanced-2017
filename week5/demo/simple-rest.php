@@ -8,15 +8,13 @@
  */
 header("Access-Control-Allow-Orgin: *");  // means who can access this page * = your site   allows anywebsite to your api
 header("Content-Type: application/json; charset=utf8");  // default is html  content type is json
-
-
 // status codes match http codes http://www.restapitutorial.com/httpstatuscodes.html
-$status_codes = array(  
-                    200 => 'OK',           
-                    500 => 'Internal Server Error',
-                );
+$status_codes = array(
+    200 => 'OK',
+    500 => 'Internal Server Error',
+);
 
-$status = 200;   
+$status = 200;
 
 // send header and status status code
 header("HTTP/1.1 " . $status . " " . $status_codes[$status]);
@@ -27,7 +25,7 @@ $message = 'hello';
 $response = array(
     "status" => $status,
     "status_message" => $status_codes[$status],
-    "message" => $message    
+    "message" => $message
 );
 
 
