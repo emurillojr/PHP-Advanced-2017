@@ -18,5 +18,13 @@ class Validation {
         }
         return false;
     }
+    
+    
+    public function notEmptyEmail($email) {
+        if (!empty($email)) {
+            return true;
+        }
+        return false;
+    }
 
 }
