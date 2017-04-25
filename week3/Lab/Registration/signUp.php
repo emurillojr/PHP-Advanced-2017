@@ -14,7 +14,7 @@ $confirmPassword = filter_input(INPUT_POST, 'confirmPassword');
 
 if ($util->isPostRequest()) {
 
-    if (!$validate->isValidEmail($email) || empty($email)) {
+    if (!$validate->isValidEmail($email) || !$validate->notEmptyEmail($email)) {
         $errors[] = 'Sorry, Email is not valid.';
     }
     if (empty($password)) {
