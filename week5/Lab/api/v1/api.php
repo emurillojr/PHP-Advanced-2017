@@ -38,7 +38,7 @@ try {
     if ('PUT' === $verb) {
         if (NULL === $id) {
             throw new InvalidArgumentException($resourceUCName . ' ID ' . $id . ' was not found');
-        } else if ($resourceData->put($serverData)) {
+        } else if ($resourceData->put($serverData, $id)) {
             $restServer->setMessage($resourceUCName . ' Updated');
             $restServer->setStatus(201);
         } else {
