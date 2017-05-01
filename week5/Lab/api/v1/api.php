@@ -8,7 +8,7 @@ include_once './autoload.php';
 $restServer = new RestServer();
 try {
     $restServer->setStatus(200);
-    $resource = $restServer->getResource();
+    $resource = $restServer->getResource(); 
     $verb = $restServer->getVerb();
     $id = $restServer->getId();
     $serverData = $restServer->getServerData();
