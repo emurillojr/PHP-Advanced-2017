@@ -8,11 +8,11 @@ function widgetOne() {
         restrict: 'EA',
         templateUrl: 'templates/widget-one.directive.html',
         scope: {
-            title: '@',
-            todoItems: '=',
-            removeItem: '&'
+            title: '@',  // one way
+            todoItems: '=',  // back end and front end
+            removeItem: '&'  // passing function to controller
         },
-        link: link
+        link: link  // what it does when first starts the view
         
     };
     return directive;
@@ -21,3 +21,6 @@ function widgetOne() {
       
     }
 }
+
+// component how the view should be rendered
+// directs are all about editing html

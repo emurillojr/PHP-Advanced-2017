@@ -3,10 +3,10 @@ angular
     .module('app.widgets')
     .controller('WidgetController', WidgetController);
 
-WidgetController.$inject = ['TodoService'];
+WidgetController.$inject = ['TodoService'];  //inject dependency
 
 function WidgetController(TodoService) {
-    var vm = this;
+    var vm = this;  // reference parent function
     
     vm.todoItems = TodoService.getTodoList();    
     vm.addTodoItem = TodoService.add;
@@ -15,3 +15,6 @@ function WidgetController(TodoService) {
     
 }
 
+// only job is to get ddata for the view
+// controllers extrememly light
+// vm = view model

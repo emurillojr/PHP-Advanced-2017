@@ -64,3 +64,22 @@ Add Links to help navigate the site.
 'gif' => 'image/gif'
 
 Lab 5
+Update the interface for your REST API model that will have a set of standard functions.  (getAll, get, post, put, delete)
+Make sure it has the correct parameters needed.
+Create a resource class for your corporations that implements the IRestModel interface:
+Allow a user to get one record - get()
+Allow a user to get all records - getAll()
+Allow a user to create a new record - post()
+Allow a user to update one record - put()
+Allow a user to delete a record - delete()
+
+Lab 6
+This assignment will guide you to create a small angular application step by step and learn the components to this opinionated JavaScript Framework.  
+Node.js will not be needed for this assignment.  
+You should be able to run this on just your web browser since it's just client-side JavaScript.
+1. Angular - Creating a new Module
+2. Angular - Creating a View
+3. Angular - Creating a Service
+4. Angular - Creating a Service Part two
+
+Lab 7
