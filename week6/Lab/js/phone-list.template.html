@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>.</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Phones</h1>
+
+        <ul class="phone">
+            <li ng-repeat="phone in vm.phones">
+                <a href="#/phones/{{phone.id}}">{{phone.name| uppercase}}<br /><img ng-src="{{phone.imageUrl}}"></a>
+            </li>
+        </ul>
+
+
+
+    </body>
+</html>
+

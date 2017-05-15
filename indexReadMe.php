@@ -83,3 +83,11 @@ You should be able to run this on just your web browser since it's just client-s
 4. Angular - Creating a Service Part two
 
 Lab 7
+We will use Angular to create a corporation finder.
+Use angular to make a call for all corporations using a promise and displaying them
+I should only view some of the corporations details.
+When I click on a corporation I should View more details about that corporation.
+On the details page I should have google maps display a marker on the location of the corporation.
+I should have a mail to link for the email.
+I should have a tel link for the phone number.
+On the view page I should have a search filter that will allow me to search the corporations.
